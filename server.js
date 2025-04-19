@@ -6,9 +6,9 @@ const app = express();
 app.use(cors());
 
 app.get('/stream', (req, res) => {
-  const url = 'http78.129.150.20711127;';
+  const url = 'http://78.129.150.207:11127/;';
   req.pipe(request(url)).pipe(res);
 });
 
-const PORT = process.env.PORT  3000;
-app.listen(PORT, () = console.log(`Proxy running on port ${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
