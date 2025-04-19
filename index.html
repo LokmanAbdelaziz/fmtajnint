@@ -479,7 +479,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive Design - Mobile */
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 height: 50vh;
@@ -493,33 +493,26 @@
                 font-size: 1.1rem;
             }
 
-            /* Mobile-specific player adjustments */
             .player-section {
                 padding: 0.8rem;
-                gap: 0.8rem;
+                gap: 1rem;
                 flex-direction: column;
                 align-items: stretch;
-                width: 95%;
-                top: 10px;
             }
 
             .now-playing {
                 margin-bottom: 0.5rem;
-                width: 100%;
             }
 
             .player-controls {
                 order: 1;
-                margin: 0 auto;
-                width: 100%;
-                justify-content: center;
+                margin: 0.5rem 0;
             }
 
             .volume-control {
                 order: 2;
                 width: 100%;
                 justify-content: center;
-                padding: 0.5rem;
             }
 
             .mosque-thumbnail {
@@ -534,31 +527,15 @@
             .play-pause-btn {
                 width: 42px;
                 height: 42px;
-                font-size: 1rem;
             }
 
             .control-btn {
                 width: 36px;
                 height: 36px;
-                font-size: 0.9rem;
             }
 
             .volume-slider {
                 width: 80px;
-            }
-
-            .close-btn {
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                font-size: 1.2rem;
-                width: 25px;
-                height: 25px;
-            }
-
-            .loading-spinner {
-                width: 18px;
-                height: 18px;
             }
         }
 
@@ -569,23 +546,16 @@
 
             .section-title {
                 font-size: 1.6rem;
-                margin-bottom: 2rem;
             }
 
             .listen-btn {
                 width: 100%;
                 justify-content: center;
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
             }
 
-            .mosque-cards {
-                gap: 1.5rem;
-            }
-
-            .mosque-card {
-                width: 100%;
-                max-width: 300px;
+            .player-section {
+                top: 10px;
+                width: 95%;
             }
         }
     </style>
@@ -630,7 +600,7 @@
 
         <button class="close-btn" id="close-btn">&times;</button>
         <div class="loading-spinner" id="loading-spinner"></div>
-        <audio id="audio-player" crossOrigin="anonymous"></audio>
+        <audio id="audio-player"></audio>
     </div>
 
     <main>
@@ -665,8 +635,7 @@
             <p class="copyright">© 2025 البث المباشر لمساجد تجنينت العطف | جميع الحقوق محفوظة</p>
         </div>
     </footer>
-
-    <script>
+<script>
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
@@ -899,5 +868,24 @@
         resetAllMosqueCards();
         handleScroll();
     </script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB73ecxAoXNwl1RFVBwRAuYxM8h_AJ33wo",
+    authDomain: "fmtajnint-cff20.firebaseapp.com",
+    projectId: "fmtajnint-cff20",
+    storageBucket: "fmtajnint-cff20.firebasestorage.app",
+    messagingSenderId: "570802944691",
+    appId: "1:570802944691:web:acf9cc088d9aa301f0cec6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
