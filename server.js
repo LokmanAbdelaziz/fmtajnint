@@ -5,7 +5,7 @@ const request = require('request');
 const app = express();
 app.use(cors());
 
-app.get('stream', (req, res) = {
+app.get('/stream', (req, res) => {
   const url = 'http78.129.150.20711127;';
   req.pipe(request(url)).pipe(res);
 });
